@@ -33,8 +33,6 @@ client.connect(async function () {
     }
 });
 
-app.use(express.static(path.join(__dirname, 'build')));
-
 app.get('/records', function (req, res) {
 
     const db = client.db(dbName);
@@ -42,10 +40,6 @@ app.get('/records', function (req, res) {
     records.find().toArray(function (err, docs) {
         return res.json(docs);
     });
-});
-
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.listen(process.env.PORT || 8080);

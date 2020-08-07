@@ -38,9 +38,6 @@ class App extends React.Component {
               pagination: "local",
               paginationSize: 5
             }}
-            data-custom-attr="test-custom-attribute"
-            className="custom-css-class"
-
           />
         </Container>
       </div>
